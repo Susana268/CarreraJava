@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="96575dcb-ee7a-48f3-ad12-f0251b077e21">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select nombre_usuario,apellido_usuario,edad_usuario, 
+b.nombre_tipo_usuario, c.punteo_score
+from tbl_usuario as a
+left join  tbl_tipo_usuario as b
+on a.id_tipo_usuario_fk=b.id_tipo_usuario
+left join tbl_score as c
+on a.id_usuario=c.id_usuario_fk]]>
+	</queryString>
+	<field name="nombre_usuario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellido_usuario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="edad_usuario" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_tipo_usuario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="punteo_score" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="204" y="26" width="130" height="20" uuid="32cacc05-6030-4b00-b25b-da9f6c7cc04e"/>
+				<textElement>
+					<font size="15" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Lista de Usuarios]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="442" y="6" width="100" height="20" uuid="4d18d1a4-1d07-4fe8-af26-3a1199a8473f"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="39fe6a71-e870-4cf6-99a0-d007ccc748ae"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="0" width="100" height="20" uuid="01cb4dde-bb7a-4b55-b767-bdc653a6f5eb"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="0" width="100" height="20" uuid="7a041915-178d-4eae-847b-aa06e6027497"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Edad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="0" width="100" height="20" uuid="3cc0ef39-e55f-44d6-b73a-89be550638c1"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="20" uuid="61adb1f5-ae6f-4c56-a39e-148c2dfa0243"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Punteo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="c715c219-d479-4aac-8d02-ffbcd60f9fd6"/>
+				<textFieldExpression><![CDATA[$F{nombre_usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="0" width="100" height="20" uuid="0e47cdaa-3254-4bcb-b7b8-0b2b0c4bfaba"/>
+				<textFieldExpression><![CDATA[$F{apellido_usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="0" width="70" height="20" uuid="9b9359af-e687-4b48-8f9c-6c36e5fa3f74"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{edad_usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="334" y="0" width="100" height="20" uuid="6b0e5594-85fd-46e0-9bde-4a4f3afae539"/>
+				<textFieldExpression><![CDATA[$F{nombre_tipo_usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="442" y="0" width="84" height="20" uuid="6695c2ef-0084-441c-9779-5e0b8749fb83"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{punteo_score}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="224" y="12" width="80" height="20" uuid="ed43e042-acbe-45c4-a489-28fcca432c1f"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="304" y="12" width="40" height="20" uuid="3773b916-80c5-4a88-ba3e-6993ffa6cfb1"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

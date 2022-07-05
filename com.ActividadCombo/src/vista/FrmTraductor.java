@@ -44,6 +44,11 @@ public class FrmTraductor extends javax.swing.JFrame {
         jLabel1.setText("Traductor de Español a Ingles");
 
         cmbPalabras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hola", "Buenos Dias", "Buenas Noches", "Adios", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" }));
+        cmbPalabras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbPalabrasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,6 +83,10 @@ public class FrmTraductor extends javax.swing.JFrame {
     private void btnTraducirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraducirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTraducirActionPerformed
+
+    private void cmbPalabrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPalabrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbPalabrasActionPerformed
 
     /**
      * @param args the command line arguments
