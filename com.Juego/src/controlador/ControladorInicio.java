@@ -72,6 +72,7 @@ public class ControladorInicio implements ActionListener {
         vAvan.setLocationRelativeTo(null);
         vAvan.setResizable(false);
         vAvan.txtNumero.setText("");
+        vAvan.txtEspañol.setText("");
     }
 
     public void confirmaUsuario(){          
@@ -80,7 +81,8 @@ public class ControladorInicio implements ActionListener {
         
         UsuarioVO info = udao.getUsuario(uvo); 
         
-        if (uvo.getPassword().equals(info.getPassword())){
+        if (uvo.getPassword().equals(info.getPassword()))
+        {if(info.getEstado().equals("A")){ 
             vIn.txtIdUsuario.setText(String.valueOf(info.getIdUsuario()));
             System.out.println("id txt conf "+this.vIn.txtIdUsuario.getText());
             this.tvo.setIdTipoUsuario(info.getIdTipoUsuarioFk());
@@ -104,6 +106,9 @@ public class ControladorInicio implements ActionListener {
                 default:
                     break;
             }
+        }else {
+            vIn.jopInicio.showMessageDialog(vIn,"Usuario Inactivo"+info.getEstado());
+        }
         }else {
             vIn.jopInicio.showMessageDialog(vIn,"Usuario o Password Incorrectos");
         }   
