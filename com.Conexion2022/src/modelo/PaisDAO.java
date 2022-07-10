@@ -15,7 +15,7 @@ public class PaisDAO implements ConsultasPais {
             String query = "INSERT INTO pais (nombre_pais, "+
                            "capital_pais, "+
                            "poblacion_pais, "+
-                           "fecha_ingreso_pais, ) "+
+                           "fecha_ingreso_pais ) "+
                            "VALUES ( '"+p.getNombrePais()+"', '"+
                                         p.getCapitalPais()+"', "+
                                         p.getPoblacionPais()+", '"+
