@@ -68,11 +68,13 @@ public class ControladorInicio implements ActionListener {
     }
     
     public void avanzadoAcceso(){
+        vAvan.txtNumero.setText("");
+        vAvan.txtEspañol.setText("");
+        vAvan.txtIngles.setText("");
         vAvan.setVisible(true);
         vAvan.setLocationRelativeTo(null);
         vAvan.setResizable(false);
-        vAvan.txtNumero.setText("");
-        vAvan.txtEspañol.setText("");
+
     }
 
     public void confirmaUsuario(){          

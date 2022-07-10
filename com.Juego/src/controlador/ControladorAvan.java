@@ -181,6 +181,10 @@ public class ControladorAvan implements ActionListener, WindowListener, ItemList
 
     @Override
     public void windowOpened(WindowEvent e) {
+        loopNumero=1;
+        traNumero=1; 
+        punteo=0; 
+        punteoFinal=0;
         this.Actualizar();
     }
 
